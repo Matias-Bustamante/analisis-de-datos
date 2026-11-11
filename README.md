@@ -1,3 +1,4 @@
+
 ## Tipo de datos 
 
 ### Fecha: String
@@ -53,7 +54,7 @@
     7. P3 (75%): 17.97 
     8. Máximo: 34 (km/h)
 
-# Tratamientos de valores faltantes e invalidos 
+# Tratamientos de valores faltantes e inválidos 
 Los valores faltantes y valores fisicamente imposibles, como precipitaciones negativas se reemplazaron con valores de NaN y luego se imputaron mediante **interpolacion lineal respecto del tiempo**. Se eligió este método por las siguientes razones:                
 1. Naturaleza de la variable: La temperatura es una variable continua con autocorrelación temporal; el valor de un día es muy similar al día anterior y al día siguiente. Por lo tanto el promedio ponderado de los vecinos es una estimación razonable del valor faltante. 
 2. Baja proporción de faltantes: Los valores a imputar representan una fracción minima del total, por lo que el efecto de la distribución es acotado. 
@@ -68,4 +69,4 @@ Al eliminar aquellos registros que no son válidos se pierde la continuidad temp
 Realiza la ponderación teniendo en cuenta la distancia relativa de la fecha y no las distancia absoluta.  
 
 # Conclusiones
-Los siguientes estadisticos se calcularon sobre los datos original, sin tratamiento, con el fin de detectar anomalia. No deben interpretarse como resultado final.En el conjunto de datos la variable **temp_max_c** tiene valores negativos (representarian eventos anomalos), la variable **humedad_pct** también contiene valores negativos, la variable **precipitacion_mm** tienen valores negativos que representan situación de anomalia.  
+Los siguientes estadisticos se calcularon sobre los datos original, sin tratamiento, con el fin de detectar anomalia. No deben interpretarse como resultado final.En el conjunto de datos la variable **temp_max_c** tiene valores negativos (representarian eventos anomalos), la variable **humedad_pct** también contiene valores negativos, la variable **precipitacion_mm** tienen valores negativos que representan situación de anomalia. La variable **"estacion"** se puede omitir del análisis esto se debe a que contiene un único valor y no aporta mayor información.
