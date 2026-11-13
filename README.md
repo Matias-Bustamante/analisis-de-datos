@@ -68,5 +68,16 @@ Al eliminar aquellos registros que no son válidos se pierde la continuidad temp
 ## ¿Qué significa el **method='time'**?
 Realiza la ponderación teniendo en cuenta la distancia relativa de la fecha y no las distancia absoluta.  
 
+# Técnica de imputación de datos faltantes para precipitaciones 
+El conjunto de datos proporcionado muestra valores faltantes e imposibles para la variable de precipitación, por tal motivo se debe proceder a corregir las incosistencia en los datos, para resolver se opto por varias alternativas las cuales se mencionan a continuación: 
+1. Eliminar las filas con datos faltantes y valores imposibles (valores negativos). 
+2. Utilizar técnica de interpolación lineal.
+3. Utilizar técnica de imputación espacial. 
+4. Utilizar regresion lineal multiple. 
+5. Por referencia de variables dependientes. 
+Para la situación problematica se utilizao una combinación **por referencia de variables dependientes** y **regresión lineal multiple**.  
+Para el caso de variables dependientes se imputo el valor de **0** cuando el estado del sensor esta en **mantenimiento** y **falla**. 
+En relación a la **regresión lineal multiple** las precipitaciones se modelo como una relación lineal de las variables explicativas (temperatura maxima, temperatura minima, humedad y viento). 
+
 # Conclusiones
 Los siguientes estadisticos se calcularon sobre los datos original, sin tratamiento, con el fin de detectar anomalia. No deben interpretarse como resultado final.En el conjunto de datos la variable **temp_max_c** tiene valores negativos (representarian eventos anomalos), la variable **humedad_pct** también contiene valores negativos, la variable **precipitacion_mm** tienen valores negativos que representan situación de anomalia. La variable **"estacion"** se puede omitir del análisis esto se debe a que contiene un único valor y no aporta mayor información.
